@@ -13,6 +13,11 @@
             font-family: 'Arial', sans-serif;
             text-align: center;
             overflow-x: hidden;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
         }
 
         .top-section {
@@ -21,17 +26,27 @@
             align-items: center;
             padding: 10px;
             width: 100%;
+            box-sizing: border-box;
         }
 
         .top-left-text {
             font-size: 0.9rem;
             margin-left: 10px;
+            flex-grow: 1;
+            text-align: left;
+        }
+        .top-right-icons {
+            display: flex;
+            justify-content: flex-end;
+            margin-right: 10px;
+            flex-grow: 1;
+                
         }
 
         .top-right-icons img {
             width: 22px;
             height: 22px;
-            margin-right: 10px;
+            margin-left: 10px;
             cursor: pointer;
         }
 
@@ -72,9 +87,9 @@
         .tiles-section {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
-            margin: 20px 10px;
+            justify-content: center;
             gap: 10px;
+            margin: 20px 10px;
         }
 
         .tile {
@@ -200,6 +215,13 @@
             <p>File Imports</p>
         </div>
     </div>
+    
+    <br>
+     <br>
+      <br>
+      <br>
+     <br>
+    <br>
 
     <div class="navigation-bar">
         <div class="nav-icon" onclick="window.location.href='#';">
