@@ -43,6 +43,7 @@
             height: 22px;
             margin-left: 10px;
             cursor: pointer;
+            outline: none;
         }
 
         .center-content {
@@ -69,6 +70,7 @@
             height: 25px;
             margin: 0 15px;
             cursor: pointer;
+            outline: none;
         }
 
         .rounded-body {
@@ -112,6 +114,7 @@
             width: 30px;
             height: 30px;
             margin-bottom: 5px;
+            outline: none;
         }
 
         .tile p {
@@ -149,6 +152,7 @@
             width: 22px;
             height: 22px;
             margin-bottom: 5px;
+            outline: none;
         }
 
         .nav-icon p {
@@ -166,6 +170,11 @@
             border-radius: 50%;
             border: 1px solid white;
         }
+
+        .nav-icon img, .top-right-icons img, .center-icons img, .tile img {
+            outline: none;
+            -webkit-tap-highlight-color: transparent;
+        }
     </style>
 </head>
 <body>
@@ -181,7 +190,7 @@
     <div class="center-content">
         <h4>SnapZen</h4>
         <p>An advanced SnapChat mod, packed with extended functionality!</p>
-        <div class="smaller-text">V1.0.2 • By Sinful Zen</div>
+        <div class="smaller-text">V1.0.6 • By Sinful Zen</div>
         <div class="center-icons">
             <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/social-media/facebook.png" alt="GitHub" onclick="window.location.href='https://facebook.com/sinful.zen';">
             <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/social-media/instagram.png" alt="YouTube" onclick="window.location.href='https://instagram.com/zen.sinful';">
@@ -191,9 +200,9 @@
     </div>
 
     <div class="rounded-body">
-        <p>You're running a private and debug release of SnapZen.</p>
-        <p>Version: 1.0.2 Debug (102D)</p>
-        <p>Build date: 16/09/2024, 1944PM EST</p>
+        <p>You're running a debug release of SnapZen.</p>
+        <p>Version: 1.0.6 Debug (106D)</p>
+        <p>Build date: 16/09/2024, 20:00PM EST</p>
     </div>
 
     <div class="tiles-section">
@@ -234,11 +243,6 @@
             <p>File Imports</p>
         </div>
     </div>
-    
-    <br>
-     <br>
-    <br>
-     <br>
 
     <div class="navigation-bar">
         <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/media/index.html';">
