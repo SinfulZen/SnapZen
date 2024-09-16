@@ -30,7 +30,7 @@
             flex-grow: 1;
             text-align: left;
         }
-        
+
         .top-right-icons {
             display: flex;
             justify-content: flex-end;
@@ -84,14 +84,15 @@
             margin-top: 10px;
         }
 
-        /* Updated tiles for a smaller, square layout */
+        /* Updated grid layout for responsive, square tiles */
         .tiles-section {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
             gap: 10px;
             padding: 10px;
             margin: 20px auto;
-            max-width: 360px;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         .tile {
@@ -105,8 +106,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100px;
-            width: 100px;
+            aspect-ratio: 1; /* Ensures tiles are square */
         }
 
         .tile img {
@@ -243,8 +243,16 @@
             <p>Features</p>
         </div>
         <div class="nav-icon" onclick="window.location.href='#';">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/history.png" alt="History">
-            <p>History</p>
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/home.png" alt="History">
+            <p>Home</p>
+        </div>
+                <div class="nav-icon" onclick="window.location.href='#';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/social.png" alt="History">
+            <p>Social</p>
+        </div>
+                <div class="nav-icon" onclick="window.location.href='#';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/scripting.png" alt="History">
+            <p>Scripting</p>
         </div>
     </div>
 
