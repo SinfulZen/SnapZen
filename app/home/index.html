@@ -159,21 +159,21 @@
             font-size: 0.65rem;
             margin: 0;
         }
+        
+        .nav-icon:focus, .nav-icon:active {
+            outline: none;
+            border: none;
+        }
 
         .nav-icon:active::after {
-            content: "";
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid white;
+            content: none;
+            
         }
 
         .nav-icon img, .top-right-icons img, .center-icons img, .tile img {
             outline: none;
             -webkit-tap-highlight-color: transparent;
+            outline: none;
         }
     </style>
 </head>
@@ -200,9 +200,9 @@
     </div>
 
     <div class="rounded-body">
-        <p>You're running a debug release of SnapZen.</p>
-        <p>Version: 1.0.6 Debug (106D)</p>
-        <p>Build date: 16/09/2024, 20:00PM EST</p>
+        <p>Status: Debug build</p>
+        <p>Version: 1.0.6</p>
+        <p>Build date: 16/09/2024, 20:12PM EST</p>
     </div>
 
     <div class="tiles-section">
@@ -243,6 +243,11 @@
             <p>File Imports</p>
         </div>
     </div>
+    
+    <br>
+     <br>
+    <br>
+     <br>
 
     <div class="navigation-bar">
         <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/media/index.html';">
