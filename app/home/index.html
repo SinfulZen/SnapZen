@@ -4,155 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SnapZen</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #141414;
-            color: white;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            overflow-x: hidden;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100vh;
-        }
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #141414;
+        color: white;
+        font-family: 'Arial', sans-serif;
+        text-align: center;
+        overflow-x: hidden;
+    }
 
-        .top-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
+    .top-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
 
-        .top-left-text {
-            font-size: 0.9rem;
-            margin-left: 10px;
-            flex-grow: 1;
-            text-align: left;
-        }
-        .top-right-icons {
-            display: flex;
-            justify-content: flex-end;
-            margin-right: 10px;
-            flex-grow: 1;
-                
-        }
+    .top-left-text {
+        font-size: 0.9rem;
+        margin-left: 10px;
+        flex-grow: 1;
+        text-align: left;
+    }
+    
+    .top-right-icons {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 10px;
+        flex-grow: 1;
+    }
 
-        .top-right-icons img {
-            width: 22px;
-            height: 22px;
-            margin-left: 10px;
-            cursor: pointer;
-        }
+    .top-right-icons img {
+        width: 22px;
+        height: 22px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
 
-        .center-content {
-            margin-top: 20px;
-            padding: 0 10px;
-        }
+    .center-content {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
 
-        h4 {
-            font-size: 1.6rem;
-            margin: 0;
-        }
+    h4 {
+        font-size: 1.6rem;
+        margin: 0;
+    }
 
-        .smaller-text {
-            font-size: 0.9rem;
-            margin-top: 10px;
-        }
+    .smaller-text {
+        font-size: 0.9rem;
+        margin-top: 10px;
+    }
 
-        .center-icons {
-            margin-top: 15px;
-        }
+    .center-icons {
+        margin-top: 15px;
+    }
 
-        .center-icons img {
-            width: 40px;
-            height: 40px;
-            margin: 0 15px;
-            cursor: pointer;
-        }
+    .center-icons img {
+        width: 40px;
+        height: 40px;
+        margin: 0 15px;
+        cursor: pointer;
+    }
 
-        .rounded-body {
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            border-radius: 15px;
-            padding: 15px;
-            margin: 20px 10px;
-        }
+    .rounded-body {
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 15px;
+        margin: 20px 10px;
+    }
 
-        .tiles-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 20px 10px;
-        }
+    .info-text {
+        font-size: 0.8rem;
+        margin-top: 10px;
+    }
 
-        .tile {
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            border-radius: 10px;
-            padding: 10px;
-            width: 28%;
-            text-align: center;
-            cursor: pointer;
-        }
+    .tiles-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 20px 10px;
+        gap: 10px;
+    }
 
-        .tile img {
-            width: 35px;
-            height: 35px;
-        }
+    .tile {
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 10px;
+        width: 28%;
+        text-align: center;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 5px;
+    }
 
-        .tile p {
-            font-size: 0.75rem;
-            margin-top: 5px;
-        }
+    .tile img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 5px;
+    }
 
-        .navigation-bar {
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            border-radius: 30px;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: fixed;
-            bottom: 10px;
-            width: 90%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+    .tile p {
+        font-size: 0.75rem;
+        margin: 0;
+    }
 
-        .nav-icon {
-            position: relative;
-            cursor: pointer;
-        }
+    .navigation-bar {
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 30px;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 10px;
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        box-sizing: border-box;
+    }
 
-        .nav-icon img {
-            width: 22px;
-            height: 22px;
-        }
+    .nav-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        padding-top: 5px;
+    }
 
-        .nav-icon p {
-            font-size: 0.65rem;
-            margin-top: 5px;
-        }
+    .nav-icon img {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 5px;
+    }
 
-        .nav-icon:active::after {
-            content: "";
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid white;
-        }
-    </style>
+    .nav-icon p {
+        font-size: 0.65rem;
+        margin: 0;
+    }
+
+    .nav-icon:active::after {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid white;
+    }
+</style>
+
 </head>
 <body>
 
@@ -168,8 +182,11 @@
         <h4>SnapZen</h4>
         <div class="smaller-text">V1.0.0, by Sinful Zen</div>
         <div class="center-icons">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/social-media/facebook.png" alt="GitHub" onclick="window.location.href='https://github.com/SinfulZen';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/social-media/instagram.png" alt="YouTube" onclick="window.location.href='https://youtube.com/Official.SinfulZen';">
             <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/social-media/github.png" alt="GitHub" onclick="window.location.href='https://github.com/SinfulZen';">
             <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/social-media/youtube.png" alt="YouTube" onclick="window.location.href='https://youtube.com/Official.SinfulZen';">
+            
         </div>
     </div>
 
