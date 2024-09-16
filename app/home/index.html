@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapZen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #141414;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        .top-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+        }
+
+        .top-left-text {
+            font-size: 0.9rem;
+            margin-left: 10px;
+        }
+
+        .top-right-icons img {
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .center-content {
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+
+        h4 {
+            font-size: 1.6rem;
+            margin: 0;
+        }
+
+        .smaller-text {
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .center-icons {
+            margin-top: 15px;
+        }
+
+        .center-icons img {
+            width: 40px;
+            height: 40px;
+            margin: 0 15px;
+            cursor: pointer;
+        }
+
+        .rounded-body {
+            background-color: #1e1e1e;
+            border: 1px solid white;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 20px 10px;
+        }
+
+        .tiles-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 20px 10px;
+            gap: 10px;
+        }
+
+        .tile {
+            background-color: #1e1e1e;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            width: 28%;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .tile img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .tile p {
+            font-size: 0.75rem;
+            margin-top: 5px;
+        }
+
+        .navigation-bar {
+            background-color: #1e1e1e;
+            border: 1px solid white;
+            border-radius: 30px;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 10px;
+            width: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-icon {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-icon img {
+            width: 22px;
+            height: 22px;
+        }
+
+        .nav-icon p {
+            font-size: 0.65rem;
+            margin-top: 5px;
+        }
+
+        .nav-icon:active::after {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-section">
+        <div class="top-left-text">Home</div>
+        <div class="top-right-icons">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/top-centre/debug.png" alt="Debugging" onclick="window.location.href='debugging/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/top-centre/settings.png" alt="Settings" onclick="window.location.href='settings/index.html';">
+        </div>
+    </div>
+
+    <div class="center-content">
+        <h4>SnapZen</h4>
+        <div class="smaller-text">V1.0.0, by Sinful Zen</div>
+        <div class="center-icons">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/social-media/github.png" alt="GitHub" onclick="window.location.href='https://github.com/SinfulZen';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/home/social-media/youtube.png" alt="YouTube" onclick="window.location.href='https://youtube.com/Official.SinfulZen';">
+        </div>
+    </div>
+
+    <div class="rounded-body">
+        <p>You're running a private and debug release of SnapZen. Please note that this build is experimental and may not work correctly.</p>
+    </div>
+
+    <div class="tiles-section">
+        <div class="tile" onclick="window.location.href='#';">
+            <img src="#" alt="ManageFriends">
+            <p>Manage Friends</p>
+        </div>
+        <div class="tile" onclick="window.location.href='#';">
+            <img src="#" alt="ClearCache">
+            <p>Clear Cache</p>
+        </div>
+        <div class="tile" onclick="window.location.href='#';">
+            <img src="#" alt="BulkActions">
+            <p>Bulk Actions</p>
+        </div>
+        <div class="tile" onclick="window.location.href='#';">
+            <img src="#" alt="ExportMemories">
+            <p>Export Memories</p>
+        </div>
+        <div class="tile" onclick="window.location.href='#';">
+            <img src="#" alt="ExportMessages">
+            <p>Export Messages</p>
+        </div>
+        <div class="tile" onclick="window.location.href='#';">
+            <img src="#" alt="Themes">
+            <p>Themes</p>
+        </div>
+        <div class="tile" onclick="window.location.href='#';">
+            <img src="#" alt="LoggerHistory">
+            <p>Logger History</p>
+        </div>
+        <div class="tile" onclick="window.location.href='#';">
+            <img src="#" alt="Tracker">
+            <p>Tracker</p>
+        </div>
+        <div class="tile" onclick="window.location.href='#';">
+            <img src="#" alt="FileImports">
+            <p>File Imports</p>
+        </div>
+    </div>
+
+    <div class="navigation-bar">
+        <div class="nav-icon" onclick="window.location.href='#';">
+            <img src="#" alt="Media">
+            <p>Media</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='#';">
+            <img src="#" alt="Features">
+            <p>Features</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='#';">
+            <img src="#" alt="Home">
+            <p>Home</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='#';">
+            <img src="#" alt="Social">
+            <p>Social</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='#';">
+            <img src="#" alt="Scripting">
+            <p>Scripting</p>
+        </div>
+    </div>
+
+</body>
+</html>
