@@ -13,4 +13,5 @@ All versions from 10.8.50.0 to the latest are supported.
 
 
 ### Notes
-For now, only the GUI / UI is being uploaded to this repo. If it gets enough attention, We may consider adding the full mod!
+For now, only the GUI / UI is being uploaded to this repo. If it gets enough attention, We may consider adding the full mod!  
+- You may notice that the APK version is [1.0.0](https://github.com/SinfulZen/SnapZen) while the version in the app is different. As the APK is a WebView, there's no need for us to keep changing the APK version number!
