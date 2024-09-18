@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapZen</title>
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #141414;
+        color: white;
+        font-family: 'Arial', sans-serif;
+        text-align: left;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+
+    .top-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .top-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .top-left img {
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .top-left-text {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+
+    .menu-icon {
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 8px;
+        padding: 10px;
+        top: 50px;
+        right: 10px;
+        width: 120px; 
+        box-sizing: border-box;
+    }
+
+    .dropdown a {
+        display: block;
+        padding: 8px 10px;
+        color: white;
+        text-decoration: none;
+        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+
+    .dropdown a:hover {
+        background-color: #2b2b2b;
+    }
+
+    .center-content {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+
+    .center-content p {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
+        font-size: 0.9rem;
+    }
+
+    .center-content img {
+        width: 25px;
+        height: 25px;
+        margin-right: 10px;
+    }
+
+    .rounded-body {
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 15px;
+        margin: 20px 10px;
+    }
+
+    .navigation-bar {
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+
+    .nav-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .nav-icon img {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 5px;
+    }
+
+    .nav-icon p {
+        font-size: 0.65rem;
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
+        .top-left-text {
+            font-size: 0.9rem;
+        }
+
+        .center-content p {
+            font-size: 0.85rem;
+        }
+
+        .navigation-bar {
+            padding: 10px 0;
+        }
+
+        .nav-icon img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-icon p {
+            font-size: 0.6rem;
+        }
+    }
+</style>
+<script>
+    function toggleDropdown() {
+        const dropdown = document.getElementById('dropdown-menu');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+
+    window.onclick = function(event) {
+        if (!event.target.matches('.menu-icon')) {
+            const dropdown = document.getElementById('dropdown-menu');
+            if (dropdown.style.display === 'block') {
+                dropdown.style.display = 'none';
+            }
+        }
+    }
+</script>
+</head>
+<body>
+
+    <div class="top-section">
+        <div class="top-left">
+            <img src="back.png" alt="Back" onclick="window.location.href='previous-page-url';">
+            <div class="top-left-text">Debugging</div>
+        </div>
+        <div class="top-right-icons">
+            <img class="menu-icon" src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/more.png" alt="Menu" onclick="toggleDropdown()">
+            <div id="dropdown-menu" class="dropdown">
+                <a href="#">Clear logs</a>
+                <a href="#">Export logs</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-content">
+        <p><img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/info.png" alt="Message"> [Date / Time] SnapZen client started</p>
+        <p><img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/info.png" alt="Message"> [Date / Time] ERROR: Version check failed</p>
+        <p><img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/info.png" alt="Message"> [Date / Time] ERROR: Bridge connection unsuccessful</p>
+        <p><img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/info.png" alt="Message"> [Date / Time] ERROR: Media features failed to load</p>
+        <p><img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/info.png" alt="Message"> [Date / Time] ERROR: Option features failed to load</p>
+        <p><img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/info.png" alt="Message"> [Date / Time] ERROR: Social features failed to load</p>
+        <p><img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/info.png" alt="Message"> [Date / Time] ERROR: Scripting features failed to load</p>
+        <p><img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/info.png" alt="Message"> [Date / Time] ERROR: Back-end services failed to load</p>
+        <p><img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/info.png" alt="Message"> [Date / Time] ERROR: Main functionality was unable to load</p>
+        
+        <br>
+         <br>
+        <br>
+        
+        <p>Please note that any errors above are related to back-end issues. This will not affect the app UI.</p>
+
+    </div>
+
+    <div class="navigation-bar">
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/media/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/media.png" alt="Media">
+            <p>Media</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/features/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/features.png" alt="Features">
+            <p>Features</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/home.png" alt="Home">
+            <p>Home</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/social/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/social.png" alt="Social">
+            <p>Social</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/scripting/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/scripting.png" alt="Scripting">
+            <p>Scripting</p>
+        </div>
+    </div>
+
+</body>
+</html>
