@@ -4,188 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SnapZen</title>
-    <style>
+<style>
+    body {
+        margin: 0;
+        padding: 0 20px;
+        background: linear-gradient(to bottom left, #141414 50%, #3a003f);
+        color: white;
+        font-family: 'Arial', sans-serif;
+        text-align: left;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        box-sizing: border-box;
+    }
+
+    .top-section {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: space-between;
+    }
+
+    .top-left {
+        display: flex;
+        align-items: center;
+        margin-left: 0;
+    }
+
+    .top-left img {
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .top-left-text {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+
+    .header-text {
+        font-size: 1.4rem;
+        margin: 20px 0 10px;
+    }
+
+    .text-with-icon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .main-text {
+        font-size: 1rem;
+        margin-left: 0;
+    }
+
+    .sub-text {
+        font-size: 0.8rem;
+        color: #bbb;
+        margin-left: 0;
+    }
+
+    .text-with-icon img {
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .rounded-body {
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 15px;
+        margin: 20px 0;
+    }
+
+    .rounded-body p {
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+
+    .rounded-buttons {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    .rounded-buttons button {
+        background: transparent;
+        border: 1px solid white;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .rounded-input-section {
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .rounded-input {
+        flex-grow: 1;
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 10px;
+        color: white;
+    }
+
+    .rounded-input-button {
+        margin-left: 10px;
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        padding: 10px 20px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+
+    .toggle-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+    }
+
+    .toggle-section img {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+
+    .navigation-bar {
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: calc(100% - 40px);
+        left: 20px;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+
+    .nav-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .nav-icon img {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 5px;
+    }
+
+    .nav-icon p {
+        font-size: 0.65rem;
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
         body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom left, #141414 50%, #3a003f);
-            color: white;
-            font-family: 'Arial', sans-serif;
-            text-align: left;
-            overflow-x: hidden;
-            overflow-y: scroll;
-        }
-
-        .top-section {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .top-left {
-            display: flex;
-            align-items: center;
-        }
-
-        .top-left img {
-            width: 22px;
-            height: 22px;
-            cursor: pointer;
+            padding: 0 10px;
         }
 
         .top-left-text {
-            font-size: 1rem;
-            margin-left: 10px;
-        }
-
-        .header-text {
-            font-size: 1.4rem;
-            margin: 20px 0 10px;
-        }
-
-        .text-with-icon {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px 0;
-        }
-
-        .main-text {
-            font-size: 1rem;
-        }
-
-        .sub-text {
-            font-size: 0.8rem;
-            color: #bbb;
-        }
-
-        .text-with-icon img {
-            width: 22px;
-            height: 22px;
-            cursor: pointer;
-        }
-
-        .rounded-body {
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            border-radius: 15px;
-            padding: 15px;
-            margin: 20px 10px;
-        }
-
-        .rounded-body p {
             font-size: 0.9rem;
-            margin: 5px 0;
-        }
-
-        .rounded-buttons {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 10px;
-        }
-
-        .rounded-buttons button {
-            background: transparent;
-            border: 1px solid white;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 15px;
-            cursor: pointer;
-        }
-
-        .rounded-input-section {
-            display: flex;
-            align-items: center;
-            margin: 20px 10px;
-        }
-
-        .rounded-input {
-            flex-grow: 1;
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            border-radius: 15px;
-            padding: 10px;
-            color: white;
-        }
-
-        .rounded-input-button {
-            margin-left: 10px;
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            padding: 10px 20px;
-            border-radius: 15px;
-            cursor: pointer;
-        }
-
-        .toggle-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 10px 0;
-        }
-
-        .toggle-section img {
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
         }
 
         .navigation-bar {
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            left: 0;
-            box-sizing: border-box;
-            border-radius: 8px;
-        }
-
-        .nav-icon {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            cursor: pointer;
+            padding: 10px 0;
+            width: calc(100% - 20px);
+            left: 10px;
         }
 
         .nav-icon img {
-            width: 22px;
-            height: 22px;
-            margin-bottom: 5px;
+            width: 20px;
+            height: 20px;
         }
 
         .nav-icon p {
-            font-size: 0.65rem;
-            margin: 0;
+            font-size: 0.6rem;
         }
+    }
+</style>
 
-        @media (max-width: 600px) {
-            .top-left-text {
-                font-size: 0.9rem;
-            }
-
-            .navigation-bar {
-                padding: 10px 0;
-            }
-
-            .nav-icon img {
-                width: 20px;
-                height: 20px;
-            }
-
-            .nav-icon p {
-                font-size: 0.6rem;
-            }
-        }
-    </style>
 </head>
 <body>
 
