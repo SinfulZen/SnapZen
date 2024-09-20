@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapZen</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #141414;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: left;
+            overflow-x: hidden;
+            overflow-y: scroll;
+        }
+
+        .top-section {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .top-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .top-left img {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+        }
+
+        .top-left-text {
+            font-size: 1rem;
+            margin-left: 10px;
+        }
+
+        .header-text {
+            font-size: 1.4rem;
+            margin: 20px 0 10px;
+        }
+
+        .text-with-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .main-text {
+            font-size: 1rem;
+        }
+
+        .sub-text {
+            font-size: 0.8rem;
+            color: #bbb;
+        }
+
+        .text-with-icon img {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+        }
+
+        .rounded-body {
+            background-color: #1e1e1e;
+            border: 1px solid white;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 20px 10px;
+        }
+
+        .rounded-body p {
+            font-size: 0.9rem;
+            margin: 5px 0;
+        }
+
+        .rounded-buttons {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+        }
+
+        .rounded-buttons button {
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .rounded-input-section {
+            display: flex;
+            align-items: center;
+            margin: 20px 10px;
+        }
+
+        .rounded-input {
+            flex-grow: 1;
+            background-color: #1e1e1e;
+            border: 1px solid white;
+            border-radius: 15px;
+            padding: 10px;
+            color: white;
+        }
+
+        .rounded-input-button {
+            margin-left: 10px;
+            background-color: #1e1e1e;
+            border: 1px solid white;
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        .toggle-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px 0;
+        }
+
+        .toggle-section img {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .navigation-bar {
+            background-color: #1e1e1e;
+            border: 1px solid white;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            box-sizing: border-box;
+            border-radius: 8px;
+        }
+
+        .nav-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-icon img {
+            width: 22px;
+            height: 22px;
+            margin-bottom: 5px;
+        }
+
+        .nav-icon p {
+            font-size: 0.65rem;
+            margin: 0;
+        }
+
+        @media (max-width: 600px) {
+            .top-left-text {
+                font-size: 0.9rem;
+            }
+
+            .navigation-bar {
+                padding: 10px 0;
+            }
+
+            .nav-icon img {
+                width: 20px;
+                height: 20px;
+            }
+
+            .nav-icon p {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-section">
+        <div class="top-left">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/back.png" alt="Back" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/home/index.html';">
+            <div class="top-left-text">Settings</div>
+        </div>
+    </div>
+
+    <div class="header-text">Actions</div>
+
+    <div class="text-with-icon">
+        <div>
+            <div class="main-text">Export chat messages</div>
+            <div class="sub-text">Exports PM and group chat messages into a TXT, HTML or JSON file.</div>
+        </div>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/external.png" alt="Redirect" onclick="window.location.href='#';">
+    </div>
+    
+        <div class="text-with-icon">
+        <div>
+            <div class="main-text">Export memories</div>
+            <div class="sub-text">Exports all memories into a ZIP or RAR file.</div>
+        </div>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/external.png" alt="Redirect" onclick="window.location.href='#';">
+    </div>
+    
+        <div class="text-with-icon">
+        <div>
+            <div class="main-text">Bulk actions</div>
+            <div class="sub-text">Performs operations such as deleting multiple conversations or removing Friends.</div>
+        </div>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/external.png" alt="Redirect" onclick="window.location.href='#';">
+    </div>
+    
+        <div class="text-with-icon">
+        <div>
+            <div class="main-text">Clear SnapChat cache</div>
+            <div class="sub-text">Clears the app cache.</div>
+        </div>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/external.png" alt="Redirect" onclick="window.location.href='#';">
+    </div>
+    
+        <div class="text-with-icon">
+        <div>
+            <div class="main-text">Manage Friends</div>
+            <div class="sub-text">Import or export Your Friends list when backing up.</div>
+        </div>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/external.png" alt="Redirect" onclick="window.location.href='#';">
+    </div>
+    
+        <div class="text-with-icon">
+        <div>
+            <div class="main-text">Regenerate mappings</div>
+            <div class="sub-text">Manually regenerate SnapZen mappings</div>
+        </div>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/external.png" alt="Redirect" onclick="window.location.href='#';">
+    </div>
+    
+        <div class="text-with-icon">
+        <div>
+            <div class="main-text">Change SnapZen language</div>
+            <div class="sub-text">Changes the app's default language.</div>
+        </div>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/external.png" alt="Redirect" onclick="window.location.href='#';">
+    </div>
+    
+        <div class="text-with-icon">
+        <div>
+            <div class="main-text">Security features</div>
+            <div class="sub-text">Manage security feature preferences.</div>
+        </div>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/external.png" alt="Redirect" onclick="window.location.href='#';">
+    </div>
+    
+    <div class="header-text">Logger</div>
+
+    <div class="rounded-body">
+        <p>0 Messages</p>
+        <p>0 Stories</p>
+        <div class="rounded-buttons">
+            <button onclick="window.location.href='#';">Export</button>
+            <button onclick="window.location.href='#';">Clear</button>
+            <button onclick="window.location.href='#';">History</button>
+        </div>
+    </div>
+
+        <div class="header-text">Debug</div>
+    <div class="rounded-input-section">
+        <input type="text" class="rounded-input" placeholder="config.json">
+        <button class="rounded-input-button" onclick="window.location.href='#';">Clear</button>
+    </div>
+
+    <div class="toggle-section">
+        <span>Disable feature loading</span>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/toggle-off.png" alt="Toggle" onclick="toggle(this)">
+    </div>
+    <div class="toggle-section">
+        <span>Disable auto mapper</span>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/toggle-off.png" alt="Toggle" onclick="toggle(this)">
+    </div>
+    <div class="toggle-section">
+        <span>Disable security features</span>
+        <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/toggle-off.png" alt="Toggle" onclick="toggle(this)">
+    </div>
+    
+    <br>
+     <br>
+    <br>
+     <br>
+
+    <div class="navigation-bar">
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/media/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/media.png" alt="Media">
+            <p>Media</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/features/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/features.png" alt="Features">
+            <p>Features</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/home.png" alt="History">
+            <p>Home</p>
+        </div>
+                <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/social/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/social.png" alt="History">
+            <p>Social</p>
+        </div>
+                <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/scripting/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/scripting.png" alt="History">
+            <p>Scripting</p>
+        </div>
+    </div>
+
+    <script>
+        function toggle(element) {
+            if (element.src.includes('toggle-off')) {
+                element.src = 'https://sinfulzen.github.io/SnapZen/assets/icons/misc/toggle-on.png';
+            } else {
+                element.src = 'https://sinfulzen.github.io/SnapZen/assets/icons/misc/toggle-off.png';
+            }
+        }
+    </script>
+
+</body>
+</html>
