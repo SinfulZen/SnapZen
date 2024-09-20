@@ -8,7 +8,7 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: #141414;
+        background: linear-gradient(to bottom left, #141414 50%, #3a003f);
         color: white;
         font-family: 'Arial', sans-serif;
         text-align: center;
@@ -23,6 +23,10 @@
         padding: 10px;
         width: 100%;
         box-sizing: border-box;
+        background: none;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 0 0 15px 15px;
     }
 
     .top-left-text {
@@ -40,8 +44,8 @@
     }
 
     .top-right-icons img {
-        width: 24px;
-        height: 24px;
+        width: 20px;
+        height: 20px;
         margin-left: 10px;
         cursor: pointer;
         outline: none;
@@ -67,15 +71,17 @@
     }
 
     .center-icons img {
-        width: 24px;
-        height: 24px;
+        width: 23px;
+        height: 23px;
         margin: 0 5px;
         cursor: pointer;
         outline: none;
     }
 
     .rounded-body {
-        background-color: #1e1e1e;
+        background: rgba(30, 30, 30, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border: 1px solid white;
         border-radius: 15px;
         padding: 15px;
@@ -98,7 +104,9 @@
     }
 
     .tile {
-        background-color: #1e1e1e;
+        background: rgba(30, 30, 30, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border: 1px solid white;
         border-radius: 10px;
         padding: 10px;
@@ -112,8 +120,8 @@
     }
 
     .tile img {
-        width: 30px;
-        height: 30px;
+        width: 28px;
+        height: 28px;
         margin-bottom: 5px;
         outline: none;
     }
@@ -124,7 +132,9 @@
     }
 
     .navigation-bar {
-        background-color: #1e1e1e;
+        background: rgba(30, 30, 30, 0.6);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         border: 1px solid white;
         padding: 10px 0;
         display: flex;
@@ -149,8 +159,8 @@
     }
 
     .nav-icon img {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
         margin-bottom: 3px;
         outline: none;
     }
@@ -203,8 +213,8 @@
     </div>
 
     <div class="rounded-body">
-        <p>Version: 1.0.22 - UI only (debug build)</p>
-        <p>Release: 20/09/2024, 05:54AM EST</p>
+        <p>Version: 1.0.25 - UI only (debug build)</p>
+        <p>Release: 20/09/2024, 06:02AM EST</p>
     </div>
 
     <div class="tiles-section">
