@@ -18,9 +18,9 @@ For now, only the GUI / UI is being uploaded to this repo. If it gets enough att
 
 
 ### Commits Goal
-✔️ 5 Commits
-✔️ 10 Commits
-✔️ 20 Commits
-✔️ 25 Commits
-❌ 50 Commits
-❌ 100 Commits
+✔️ 5 Commits  
+✔️ 10 Commits  
+✔️ 20 Commits  
+✔️ 25 Commits  
+❌ 50 Commits  
+❌ 100 Commits  
