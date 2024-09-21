@@ -21,7 +21,7 @@
 
         .top-section {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             align-items: center;
             padding: 10px;
             width: 100%;
@@ -39,139 +39,201 @@
             cursor: pointer;
         }
 
-        .rounded-body {
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 50px auto;
-            width: 80%;
-            max-width: 400px;
-        }
-
-        .header-text {
-            font-size: 1.4rem;
-            margin: 10px 0;
-        }
-
-        .sub-text {
-            font-size: 0.9rem;
-            color: #bbb;
-            margin: 10px 0;
-        }
-
-        .rounded-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .rounded-buttons button {
-            background: transparent;
-            border: 1px solid white;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 15px;
-            cursor: pointer;
-            width: 45%;
+        .top-left-text {
+            font-size: 1rem;
+            margin-left: 10px;
         }
 
         .navigation-bar {
-            background-color: #1e1e1e;
+            margin-top: 10px;
+            background-color: #333;
             border: 1px solid white;
-            padding: 15px 0;
+            border-radius: 15px;
+            padding: 10px;
             display: flex;
             justify-content: space-around;
-            align-items: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            left: 0;
-            box-sizing: border-box;
-            border-radius: 8px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
         }
 
-        .nav-icon {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
+        .nav-item {
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-item.active {
+            background-color: #4a4a4a;
+        }
+
+        .content {
+            margin: 20px 0;
+            font-size: 1.2rem;
+        }
+
+        .bottom-right-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
         }
 
-        .nav-icon img {
-            width: 22px;
-            height: 22px;
-            margin-bottom: 5px;
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            max-width: 400px;
+            height: 80%;
+            background-color: rgba(20, 20, 20, 0.9);
+            border: 1px solid white;
+            border-radius: 15px;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 100;
+            overflow-y: auto;
         }
 
-        .nav-icon p {
-            font-size: 0.65rem;
-            margin: 0;
+        .popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        @media (max-width: 600px) {
-            .header-text {
-                font-size: 1.2rem;
-            }
+        .popup-header-text {
+            font-size: 1.2rem;
+        }
 
-            .sub-text {
-                font-size: 0.8rem;
-            }
+        .close-icon {
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
 
-            .navigation-bar {
-                padding: 10px 0;
-            }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #444;
+            padding: 10px;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
 
-            .nav-icon img {
-                width: 20px;
-                height: 20px;
-            }
+        .search-bar img {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
 
-            .nav-icon p {
-                font-size: 0.6rem;
-            }
+        .search-bar input {
+            border: none;
+            background: transparent;
+            color: white;
+            flex-grow: 1;
+            outline: none;
+        }
+
+        .header-text {
+            font-size: 1rem;
+            margin: 15px 0 5px;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #333;
+            margin-bottom: 10px;
+        }
+
+        .option-item img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .checkbox {
+            width: 18px;
+            height: 18px;
+            border-radius: 15px;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkbox.checked {
+            background-color: #800080;
         }
     </style>
+    <script>
+        function toggleActiveOption(selectedOption) {
+            const navItems = document.querySelectorAll('.nav-item');
+            navItems.forEach(item => item.classList.remove('active'));
+            selectedOption.classList.add('active');
+        }
+
+        function togglePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function toggleCheckbox(checkbox) {
+            checkbox.classList.toggle('checked');
+        }
+    </script>
 </head>
 <body>
 
     <div class="top-section">
         <div class="top-left">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/back.png" alt="Back" onclick="window.history.back();">
-        </div>
-    </div>
-
-    <div class="rounded-body">
-        <div class="header-text">Section incomplete</div>
-        <div class="sub-text">This part of the app isn't finished yet!</div>
-        <div class="rounded-buttons">
-            <button onclick="window.location.href='https://github.com/SinfulZen/SnapZen';">GitHub repo</button>
-            <button onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/home/index.html';">Home screen</button>
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/back.png" alt="Back" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/home/index.html';">
+            <div class="top-left-text">Social</div>
         </div>
     </div>
 
     <div class="navigation-bar">
-        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/media/index.html';">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/media.png" alt="Media">
-            <p>Media</p>
+        <div class="nav-item active" onclick="toggleActiveOption(this)">Friends</div>
+        <div class="nav-item" onclick="toggleActiveOption(this)">Groups</div>
+    </div>
+
+    <div class="content">
+        Empty
+    </div>
+
+    <img class="bottom-right-icon" src="https://sinfulzen.github.io/SnapZen/assets/icons/social/add.png" alt="Menu" onclick="togglePopup()">
+
+    <div id="popup" class="popup">
+        <div class="popup-header">
+            <div class="popup-header-text"></div>
+            <img class="close-icon" src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/close.png" alt="Close" onclick="togglePopup()">
         </div>
-        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/features/index.html';">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/features.png" alt="Features">
-            <p>Features</p>
+
+        <div class="search-bar">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/social/search.png" alt="Search Icon">
+            <input type="text" placeholder="Search...">
         </div>
-        <div class="nav-icon" onclick="window.location.href='index.html';">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/home.png" alt="Home">
-            <p>Home</p>
+
+        <div class="header-text">Friends</div>
+        <div class="option-item">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/social/user.png" alt="User">
+            <div>SnapChat User</div>
+            <div class="checkbox" onclick="toggleCheckbox(this)"></div>
         </div>
-        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/social/index.html';">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/social.png" alt="Social">
-            <p>Social</p>
-        </div>
-        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/scripting/index.html';">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/scripting.png" alt="Scripting">
-            <p>Scripting</p>
+        
+        <br>
+
+        <div class="header-text">Groups</div>
+        <div class="option-item">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/social/user.png" alt="Group">
+            <div>SnapChat Group</div>
+            <div class="checkbox" onclick="toggleCheckbox(this)"></div>
         </div>
     </div>
 
