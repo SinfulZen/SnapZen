@@ -44,7 +44,22 @@
             color: #ffffff;
             display: inline-block;
             width: auto;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
+        }
+
+        .loading-animation {
+            border: 5px solid #e0e0e0;
+            border-top: 5px solid purple;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -53,12 +68,15 @@
     <div class="center-content">
         <h4 style="font-family: 'odin-rounded', sans-serif;">SnapZen</h4>
         <p>An advanced SnapChat mod, packed with extended functionality!</p>
+        <p>Please note that this is a debug build, only the UI works!</p>
         <img src="assets/branding/splash.png" alt="SplashImage">
     </div>
 
     <div class="bottom-text">
-        <p>Debug release (UI only)</p>
+        <p>Checking app, please wait...</p>
     </div>
+
+    <div class="loading-animation"></div>
 
     <script>
         setTimeout(function() {
