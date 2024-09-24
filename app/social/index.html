@@ -5,11 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SnapZen</title>
         
-<html>
-<head>
-
     <style>
-
         img, 
         button, 
         a, 
@@ -25,12 +21,7 @@
         textarea:focus {
             outline: none;
         }
-    </style>
-</head>
 
-    </html>
-    
-    <style>
         body {
             height: 100%;
             margin: 0;
@@ -71,27 +62,40 @@
         }
 
         .navigation-bar {
-            margin-top: 10px;
-            background-color: #333;
+            background: rgba(30, 30, 30, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid white;
-            border-radius: 15px;
-            padding: 10px;
+            padding: 10px 0;
             display: flex;
             justify-content: space-around;
-            width: 80%;
-            margin-left: auto;
-            margin-right: auto;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            box-sizing: border-box;
+            border-radius: 8px;
         }
 
-        .nav-item {
-            padding: 10px;
-            border-radius: 10px;
+        .nav-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            padding-top: 3px;
         }
 
-        .nav-item.active {
-            background-color: #4a4a4a;
+        .nav-icon img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .nav-icon p {
+            font-size: 0.6rem;
+            margin: 0;
         }
 
         .content {
@@ -101,7 +105,7 @@
 
         .bottom-right-icon {
             position: fixed;
-            bottom: 20px;
+            bottom: 80px;
             right: 20px;
             width: 40px;
             height: 40px;
@@ -197,7 +201,6 @@
         .checkbox.checked {
             background-color: #800080;
         }
-        
     </style>
     <script>
         function toggleActiveOption(selectedOption) {
@@ -226,8 +229,26 @@
     </div>
 
     <div class="navigation-bar">
-        <div class="nav-item active" onclick="toggleActiveOption(this)">Friends</div>
-        <div class="nav-item" onclick="toggleActiveOption(this)">Groups</div>
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/media/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/media.png" alt="Media">
+            <p>Media</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/features/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/features.png" alt="Features">
+            <p>Features</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/home.png" alt="Home">
+            <p>Home</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/social/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/social.png" alt="Social">
+            <p>Social</p>
+        </div>
+        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/scripting/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/scripting.png" alt="Scripting">
+            <p>Scripting</p>
+        </div>
     </div>
 
     <div class="content">
