@@ -4,152 +4,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SnapZen</title>
-    <style>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to bottom left, #141414 50%, #3a003f);
+        color: white;
+        font-family: 'Arial', sans-serif;
+        text-align: left;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+    }
+
+    .top-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        width: calc(100% - 40px);
+        box-sizing: border-box;
+    }
+
+    .top-left {
+        display: flex;
+        align-items: center;
+    }
+
+    .top-left img {
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+    }
+
+    .top-left-text {
+        font-size: 1rem;
+        margin-left: 10px;
+    }
+
+    .top-right-icon {
+        width: 22px;
+        height: 22px;
+        cursor: pointer;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+    }
+
+    .center-body {
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 40px);
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+    }
+
+    .center-body .text-section {
+        text-align: left;
+    }
+
+    .center-body .header-text {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .center-body .sub-text {
+        font-size: 0.9rem;
+        color: #bbb;
+    }
+
+    .center-body .right-icons {
+        display: flex;
+        align-items: center;
+    }
+
+    .center-body .right-icon {
+        width: 25px;
+        height: 25px;
+        margin-left: 10px;
+        cursor: pointer;
+    }
+
+    .bottom-right-container {
+        position: fixed;
+        bottom: 80px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .small-rounded-body {
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 10px;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .small-rounded-body img {
+        width: 22px;
+        height: 22px;
+        margin-right: 10px;
+    }
+
+    .popup {
+        display: none;
+        position: fixed;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 350px;
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        border-radius: 15px;
+        padding: 20px;
+        box-sizing: border-box;
+        z-index: 100;
+        text-align: center;
+    }
+
+    .popup .popup-header-text {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .popup .popup-sub-text {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        color: #bbb;
+    }
+
+    .popup .input-bar {
+        background-color: #333;
+        border-radius: 20px;
+        padding: 10px;
+        width: calc(100% - 20px);
+        border: none;
+        color: white;
+        margin: 10px auto;
+        outline: none;
+    }
+
+    .popup .close-button {
+        background-color: transparent;
+        border: 1px solid white;
+        border-radius: 20px;
+        padding: 10px;
+        color: white;
+        cursor: pointer;
+        width: calc(100% - 20px);
+        margin: 0 auto;
+    }
+
+    .navigation-bar {
+        background-color: #1e1e1e;
+        border: 1px solid white;
+        padding: 15px 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        width: calc(100% - 40px);
+        left: 20px;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+
+    .nav-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .nav-icon img {
+        width: 22px;
+        height: 22px;
+        margin-bottom: 5px;
+    }
+
+    .nav-icon p {
+        font-size: 0.65rem;
+        margin: 0;
+    }
+
+    @media (max-width: 600px) {
         body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(to bottom left, #141414 50%, #3a003f);
-            background-size: cover;
-            background-attachment: fixed;
-            color: white;
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            overflow-x: hidden;
-            overflow-y: scroll;
+            padding: 0 10px;
         }
 
-        .top-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .top-left {
-            display: flex;
-            align-items: center;
-        }
-
-        .top-left img {
-            width: 22px;
-            height: 22px;
-            cursor: pointer;
-        }
-
-        .rounded-body {
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 50px auto;
-            width: 80%;
-            max-width: 400px;
-        }
-
-        .header-text {
-            font-size: 1.4rem;
-            margin: 10px 0;
-        }
-
-        .sub-text {
+        .top-left-text {
             font-size: 0.9rem;
-            color: #bbb;
-            margin: 10px 0;
-        }
-
-        .rounded-buttons {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .rounded-buttons button {
-            background: transparent;
-            border: 1px solid white;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 15px;
-            cursor: pointer;
-            width: 45%;
         }
 
         .navigation-bar {
-            background-color: #1e1e1e;
-            border: 1px solid white;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            left: 0;
-            box-sizing: border-box;
-            border-radius: 8px;
-        }
-
-        .nav-icon {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            cursor: pointer;
+            padding: 10px 0;
+            width: calc(100% - 20px);
+            left: 10px;
         }
 
         .nav-icon img {
-            width: 22px;
-            height: 22px;
-            margin-bottom: 5px;
+            width: 20px;
+            height: 20px;
         }
 
         .nav-icon p {
-            font-size: 0.65rem;
-            margin: 0;
+            font-size: 0.6rem;
         }
 
-        @media (max-width: 600px) {
-            .header-text {
-                font-size: 1.2rem;
-            }
+        .small-rounded-body {
+            width: 130px;
+        }
 
-            .sub-text {
-                font-size: 0.8rem;
-            }
+        .center-body .header-text {
+            font-size: 1rem;
+        }
+    }
+</style>
 
-            .navigation-bar {
-                padding: 10px 0;
-            }
+    <script>
+        function openExternalSite() {
+            window.location.href = '#';
+        }
 
-            .nav-icon img {
-                width: 20px;
-                height: 20px;
-            }
+        function togglePopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        }
 
-            .nav-icon p {
-                font-size: 0.6rem;
+        function openFileExplorer() {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '*/*';
+            fileInput.click();
+        }
+
+        function toggleSwitch() {
+            const toggleIcon = document.getElementById('toggleIcon');
+            if (toggleIcon.src.includes('toggle-off')) {
+                toggleIcon.src = 'https://sinfulzen.github.io/SnapZen/assets/icons/misc/toggle-on.png';
+            } else {
+                toggleIcon.src = 'https://sinfulzen.github.io/SnapZen/assets/icons/misc/toggle-off.png';
             }
         }
-    </style>
+    </script>
 </head>
 <body>
 
     <div class="top-section">
         <div class="top-left">
             <img src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/back.png" alt="Back" onclick="window.history.back();">
+            <div class="top-left-text">Scripting</div>
+        </div>
+        <img class="top-right-icon" src="https://sinfulzen.github.io/SnapZen/assets/icons/scripting/copy.png" alt="Link" onclick="openExternalSite()">
+    </div>
+
+    <div class="center-body">
+        <div class="text-section">
+            <div class="header-text">ZenifyAI</div>
+            <div class="sub-text">Replaces My-AI with a custom integration featuring several models (GPT3, GPT 3.5 Turbo, GPT-4O, GPT4 Mini & Zenify).</div>
+        </div>
+        <div class="right-icons">
+            <img class="right-icon" src="https://sinfulzen.github.io/SnapZen/assets/icons/scripting/settings.png" alt="Copy">
+            <img class="right-icon" id="toggleIcon" src="https://sinfulzen.github.io/SnapZen/assets/icons/misc/toggle-off.png" alt="Toggle" onclick="toggleSwitch()">
         </div>
     </div>
 
-    <div class="rounded-body">
-        <div class="header-text">Section incomplete</div>
-        <div class="sub-text">This part of the app isn't finished yet!</div>
-        <div class="rounded-buttons">
-            <button onclick="window.location.href='https://github.com/SinfulZen/SnapZen';">GitHub repo</button>
-            <button onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/home/index.html';">Home screen</button>
+    <div class="bottom-right-container">
+        <div class="small-rounded-body" onclick="togglePopup()">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/scripting/url-import.png" alt="Popup Icon">
+            <div>URL import</div>
         </div>
+        <div class="small-rounded-body" onclick="openFileExplorer()">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/scripting/scripts-folder.png" alt="Folder Icon">
+            <div>Scripts folder</div>
+        </div>
+    </div>
+
+    <div class="popup" id="popup">
+        <div class="popup-header-text">Import scripts via URL</div>
+        <div class="popup-sub-text">Please note that User based scripts can be harmful to Your device. Please ensure that You use only trusted sources when importing scripts.</div>
+        <input type="text" class="input-bar" placeholder="Enter valid URL here">
+        <button class="close-button" onclick="togglePopup()">Close</button>
     </div>
 
     <div class="navigation-bar">
@@ -162,15 +316,15 @@
             <p>Features</p>
         </div>
         <div class="nav-icon" onclick="window.location.href='index.html';">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/home.png" alt="Home">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/home.png" alt="History">
             <p>Home</p>
         </div>
-        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/social/index.html';">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/social.png" alt="Social">
+                <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/social/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/social.png" alt="History">
             <p>Social</p>
         </div>
-        <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/scripting/index.html';">
-            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/scripting.png" alt="Scripting">
+                <div class="nav-icon" onclick="window.location.href='https://sinfulzen.github.io/SnapZen/app/scripting/index.html';">
+            <img src="https://sinfulzen.github.io/SnapZen/assets/icons/navigation/scripting.png" alt="History">
             <p>Scripting</p>
         </div>
     </div>
