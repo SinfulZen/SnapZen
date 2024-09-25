@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SnapZen</title>
     <style>
+        :root {
+            --image-width: 50%;
+        }
+
         body {
             margin: 0;
             padding: 0;
             background: linear-gradient(to top right, purple 10%, #141414 20%);
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             height: 100vh;
             color: white;
@@ -20,8 +23,9 @@
             overflow: hidden;
         }
 
-        .center-content {
-            margin-bottom: auto;
+        .top-content {
+            width: 100%;
+            margin-top: 20px;
         }
 
         h4 {
@@ -30,17 +34,38 @@
             font-family: 'odin-rounded', sans-serif;
         }
 
+        p {
+            margin: 10px 20px;
+            line-height: 1.5;
+        }
+
+        .center-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         img {
-            margin-top: 10px;
-            width: 25%;
-            height: auto;
+            width: 75px;
+            height: 75px;
+        }
+
+        .bottom-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .loading-animation {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .dot {
@@ -69,33 +94,38 @@
 
         .bottom-text {
             font-size: 0.8rem;
-            background-color: #6c6866;
-            padding: 5px 15px;
-            border-radius: 50px;
+            background-color: #1e1e1e;
+            padding: 2px 0px;
+            border-radius: 25px;
             color: #ffffff;
-            margin-bottom: 20px;
             display: inline-block;
+            border: 1px solid #ffffff;
         }
     </style>
 </head>
 <body>
 
-    <div class="center-content">
+    <div class="top-content">
         <h4>SnapZen</h4>
         <p>An advanced SnapChat mod, packed with extended functionality!
            <br>
            Please note that this is a debug build, only the UI works.</p>
+    </div>
+
+    <div class="center-image">
         <img src="assets/branding/splash.png" alt="SplashImage">
     </div>
 
-    <div class="loading-animation">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-    </div>
+    <div class="bottom-section">
+        <div class="loading-animation">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
 
-    <div class="bottom-text">
-        <p>Checking app, please wait...</p>
+        <div class="bottom-text">
+            <p>Checking app, please wait...</p>
+        </div>
     </div>
 
     <script>
