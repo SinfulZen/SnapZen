@@ -1,11 +1,10 @@
+# ⚠️ THIS PROJECT IS DISCONTINUED ⚠️  
+Please head over to the [new repo](https://github.com/SinfulZen/ThunderSnap).
+
 ## SnapZen
 
 ### What Is SnapZen
 SnapZen is an advanced mod for SnapChat, bringing extended functionality to the app. It's similar to SnapEnhance but safer to use, less detectable and has a ton more features!  
-
-
-### Features
-This section will be updated soon as there's alot of features to list!  
 
 
 ### Supported SnapChat Versions
